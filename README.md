@@ -17,7 +17,7 @@
 
 ### 1.1 图
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "300" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "270" alt="axis" align=center /></div>
 
 图是一种数据结构，由顶点集$V$和边集$E$组成,表示为$G=(V,E)$，其中$v_{i} \in V$代表每个顶点，$e_{i j}=\left(v_{i}, v_{j}\right) \in E$代表表每条边，图分为两种：
 
@@ -57,7 +57,7 @@
 
 ### 1.5 其他相关概念
 
-<img> tag: <img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
+<img><img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
 
 ## [易混淆概念](#content)
 
