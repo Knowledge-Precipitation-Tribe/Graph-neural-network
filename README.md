@@ -17,7 +17,7 @@
 
 ### 1.1 图
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "300" alt="axis" align=center /></div>
 
 图是一种数据结构，由顶点集$V$和边集$E$组成,表示为$G=(V,E)$，其中$v_{i} \in V$代表每个顶点，$e_{i j}=\left(v_{i}, v_{j}\right) \in E$代表表每条边，图分为两种：
 
@@ -49,7 +49,7 @@
 
 给定一个有$n$个顶点的图$G=(V,E)$，其拉普拉斯矩阵被定义为$L=D-A$，$D$其中为图的度矩阵，$A$为图的邻接矩阵，拉普拉斯矩阵$L$:
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/degreeMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/laplaMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
 ## [易混淆概念](#content)
 
