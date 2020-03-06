@@ -51,6 +51,14 @@
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/laplaMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
+### 1.4 时空图(Spatial-Temporal Graph)
+
+时空图是属性图，其中节点输入随时间动态变化。时空图的定义为：$G^{(t)}=\left(\mathbf{V}, \mathbf{E}, \mathbf{X}^{(t)}\right)$其中$\mathbf{X}^{(t)} \in \mathbf{R}^{n \times d}$
+
+### 1.5 其他相关概念
+
+<img> tag: <img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
+
 ## [易混淆概念](#content)
 
 ### [图神经网络与图嵌入](#content)
