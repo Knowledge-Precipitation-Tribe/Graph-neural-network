@@ -8,22 +8,22 @@
 
 ## 文章列表
 
-- <a href = "#1. 基本概念与常用符号">1. 基本概念与常用符号</a>
-  - <a href = "#1.1 图">1.1 图</a>
-  - <a href = "#1.2 顶点的度">1.2 顶点的度</a>
-  - <a href = "#1.3 图的表现形式">1.3 图的表现形式</a>
-    - <a href = "#1.3.1 邻接矩阵">1.3.1 邻接矩阵</a>
-    - <a href = "#1.3.2 度矩阵">1.3.2 度矩阵</a>
-    - <a href = "#1.3.3 拉普拉斯矩阵">1.3.3 拉普拉斯矩阵</a>
-  - <a href = "#1.4 时空图(Spatial-Temporal Graph)">1.4 时空图(Spatial-Temporal Graph)</a>
-  - <a href = "#1.5 其他相关概念">1.5 其他相关概念</a>
+- <a href = "#1.基本概念与常用符号">1.基本概念与常用符号</a>
+  - <a href = "#1.1图">1.1图</a>
+  - <a href = "#1.2顶点的度">1.2顶点的度</a>
+  - <a href = "#1.3图的表现形式">1.3图的表现形式</a>
+    - <a href = "#1.3.1邻接矩阵">1.3.1邻接矩阵</a>
+    - <a href = "#1.3.2度矩阵">1.3.2度矩阵</a>
+    - <a href = "#1.3.3拉普拉斯矩阵">1.3.3拉普拉斯矩阵</a>
+  - <a href = "#1.4时空图(Spatial-Temporal Graph)">1.4时空图(Spatial-Temporal Graph)</a>
+  - <a href = "#1.5其他相关概念">1.5其他相关概念</a>
 - <a href = "#易混淆概念">易混淆概念</a>
   - <a href = "#图神经网络与图嵌入">图神经网络与图嵌入</a>
 - <a href = "#参考文献">参考文献</a>
 
-## [1. 基本概念与常用符号](#content)
+## [1.基本概念与常用符号](#content)
 
-### 1.1 [图](#content)
+### [1.1图](#content)
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "160" alt="axis" align=center /></div>
 
@@ -32,13 +32,13 @@
 - 有向图：每条边都带有方向
 - 无向图：每条边都不带有方向，上图就是一个无向图
 
-### [1.2 顶点的度](#content)
+### [1.2顶点的度](#content)
 
 与顶点$V$相关的边的条数称为顶点$V$的度。
 
-### [1.3 图的表现形式](#content)
+### [1.3图的表现形式](#content)
 
-#### [1.3.1 邻接矩阵](#content)
+#### [1.3.1邻接矩阵](#content)
 
 邻接矩阵是表示顶点之间相邻关系的矩阵。设$G=(V,E)$是具有$n$个顶点的图，顶点序号依次为$0,1,...,n-1$,则$G$的邻接矩阵是具有如下定义的$n$阶方阵$A$：
 
@@ -47,23 +47,23 @@
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/adjMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
-#### [1.3.2 度矩阵](#content)
+#### [1.3.2度矩阵](#content)
 
 度矩阵其中包含的信息为的每一个顶点的度数，度矩阵$D$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/degreeMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
-#### [1.3.3 拉普拉斯矩阵](#content)
+#### [1.3.3拉普拉斯矩阵](#content)
 
 给定一个有$n$个顶点的图$G=(V,E)$，其拉普拉斯矩阵被定义为$L=D-A$，$D$其中为图的度矩阵，$A$为图的邻接矩阵，拉普拉斯矩阵$L$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/laplaMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
-### [1.4 时空图(Spatial-Temporal Graph)](#content)
+### [1.4时空图(Spatial-Temporal Graph)](#content)
 
 时空图是属性图，其中节点输入随时间动态变化。时空图的定义为：$G^{(t)}=\left(\mathbf{V}, \mathbf{E}, \mathbf{X}^{(t)}\right)$其中$\mathbf{X}^{(t)} \in \mathbf{R}^{n \times d}$
 
-### [1.5 其他相关概念](#content)
+### [1.5其他相关概念](#content)
 
 <img><img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
 
