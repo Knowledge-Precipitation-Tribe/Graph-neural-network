@@ -8,16 +8,16 @@
 
 ## 文章列表
 
-- <a href = "#参考文献">参考文献</a>
 - <a href = "#1. 基本概念与常用符号">1. 基本概念与常用符号</a>
 - <a href = "#易混淆概念">易混淆概念</a>
   - <a href = "#图神经网络与图嵌入">图神经网络与图嵌入</a>
+- <a href = "#参考文献">参考文献</a>
 
 ## [1. 基本概念与常用符号](#content)
 
 ### 1.1 图
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "270" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "160" alt="axis" align=center /></div>
 
 图是一种数据结构，由顶点集$V$和边集$E$组成,表示为$G=(V,E)$，其中$v_{i} \in V$代表每个顶点，$e_{i j}=\left(v_{i}, v_{j}\right) \in E$代表表每条边，图分为两种：
 
