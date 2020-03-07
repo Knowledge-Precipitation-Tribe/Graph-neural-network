@@ -18,6 +18,8 @@
   - <a href = "#其他相关概念">其他相关概念</a>
 - <a href = "#循环图神经网络RecGNNs">循环图神经网络RecGNNs</a>
 - <a href = "#卷积图神经网络ConvGNNs">卷积图神经网络ConvGNNs</a>
+  - <a href = "#基于频谱的卷积">基于频谱的卷积</a>
+  - <a href = "#基于空间的卷积">基于空间的卷积</a>
 - <a href = "#图自编码器GAEs">图自编码器GAEs</a>
 - <a href = "#时空图神经网络STGNNs">时空图神经网络STGNNs</a>
 - <a href = "#图神经网络的输出">图神经网络的输出</a>
@@ -75,6 +77,25 @@
 ## [卷积图神经网络ConvGNNs](#contents)
 
 卷积图神经网络（ConvGNNs）概括了从网格数据到图数据的卷积操作。主要思想是通过汇总节点自身的特征$\mathbf{X}_{v}$和邻居的特征$\mathbf{X}_{u}$来生成节点$v$的表示形式，其中$u \in N(v)$。与RecGNN不同，ConvGNN堆叠多个图卷积层以提取高级节点表示。ConvGNN在建立许多其他复杂的GNN模型中起着核心作用。
+
+### [基于频谱的卷积](#content)
+
+基于谱的方法通过从图信号处理的角度引入filter来定义图卷积，其中图卷积运算被解释为从图信号中去除噪声。基于频谱的图卷积认为**图是无向的**，这样可以将无向图表示为**归一化的图拉普拉斯矩阵**，定义为$\mathbf{L}=\mathbf{I}_{\mathbf{n}}-\mathbf{D}^{-\frac{1}{2}} \mathbf{A} \mathbf{D}^{-\frac{1}{2}}$，其中$\mathbf{D}$代表无向图的<a href = "#度矩阵">度矩阵</a>，因为归一化的图拉普拉斯矩阵是实对称半正定矩阵，所以可以将其分解为$\mathbf{L}=\mathbf{U} \mathbf{\Lambda} \mathbf{U}^{T}$，其中$\mathbf{U}=\left[\mathbf{u}_{\mathbf{0}}, \mathbf{u}_{\mathbf{1}}, \cdots, \mathbf{u}_{\mathbf{n}-\mathbf{1}}\right] \in \mathbf{R}^{n \times n}$是按照特征值排序的特征向量矩阵，$\mathbf{\Lambda}$是特征值的对角矩阵$\boldsymbol{\Lambda}_{i i}=\lambda_{i}$，归一化的拉普拉斯矩阵的特征向量就形成了一个正交空间，数学表示为：$\mathbf{U}^{T} \mathbf{U}=\mathbf{I}$。接下来是<a href = "https://zh.wikipedia.org/wiki/圖論傅立葉轉換">图的傅立叶变换</a>，其实我们刚才得到的$\mathbf{U}^{T}$就是图的**傅立叶转换矩阵**，我们先将图节点的所有特征向量表示为$\mathbf{X}$，其中$\mathbf{X} \in \mathbf{R}^{n}$，$\boldsymbol{x}_{\boldsymbol{i}}$代表第$i^{t h}$个节点，那么我们就可以将图的傅立叶变化定义为：$\mathscr{F}(\mathbf{x})=\mathbf{U}^{T} \mathbf{x}$，得到的输出值为$\hat{\mathbf{X}}$，则逆傅立叶变换为：$\mathscr{F}^{-1}(\hat{\mathbf{x}})=\mathbf{U} \hat{\mathbf{x}}$。那么现在我们就可以把输入信号表示为：$\mathbf{x}=\sum_{i} \hat{x}_{i} \mathbf{u}_{i}$。现在一个输入信号为$\mathbf{X}$，filter为$\mathbf{g} \in \mathbf{R}^{N}$的图卷积操作我们就可以定义为：
+$$
+\begin{aligned}
+\mathbf{x} *_{G} \mathbf{g} &=\mathscr{F}^{-1}(\mathscr{F}(\mathbf{x}) \odot \mathscr{F}(\mathbf{g})) \\
+&=\mathbf{U}\left(\mathbf{U}^{T} \mathbf{x} \odot \mathbf{U}^{T} \mathbf{g}\right)
+\end{aligned}
+$$
+其中$\odot$表示<a href = "https://blog.csdn.net/BVL10101111/article/details/53066593">Hadamard product</a>，如果我们将过滤器表示为$\mathbf{g}_{\theta}=\operatorname{diag}\left(\mathbf{U}^{T} \mathbf{g}\right)$，那么基于频谱的图卷积可以简化为：
+$$
+\mathbf{x} *_{G} \mathbf{g}_{\theta}=\mathbf{U g}_{\theta} \mathbf{U}^{T} \mathbf{x}
+$$
+这个就是基于频谱的图卷积的基本定义，关键的不同就在于filter$\mathbf{g} \theta$的选择。
+
+### [基于空间的卷积](#content)
+
+
 
 ## [图自编码器GAEs](#contents)
 
