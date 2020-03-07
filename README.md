@@ -91,7 +91,7 @@ $$
 $$
 \mathbf{x} *_{G} \mathbf{g}_{\theta}=\mathbf{U g}_{\theta} \mathbf{U}^{T} \mathbf{x}
 $$
-这个就是基于频谱的图卷积的基本定义，关键的不同就在于filter$\mathbf{g} \theta$的选择。
+这个就是基于频谱的图卷积的基本定义，关键的不同就在于filter：$\mathbf{g} \theta$的选择。
 
 ### [基于空间的卷积](#content)
 
