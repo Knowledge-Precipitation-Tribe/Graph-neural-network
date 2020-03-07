@@ -14,7 +14,7 @@
   - <a href = "#1.3图的表现形式">1.3图的表现形式</a>
     - <a href = "#1.3.1邻接矩阵">1.3.1邻接矩阵</a>
     - <a href = "#1.3.2度矩阵">1.3.2度矩阵</a>
-    - <a href = "#1.3.3拉普拉斯矩阵">1.3.3拉普拉斯矩阵</a>
+    - <a href = "#拉普拉斯矩阵">拉普拉斯矩阵</a>
   - <a href = "#1.4时空图(Spatial-Temporal Graph)">1.4时空图(Spatial-Temporal Graph)</a>
   - <a href = "#1.5其他相关概念">1.5其他相关概念</a>
 - <a href = "#易混淆概念">易混淆概念</a>
@@ -53,7 +53,7 @@
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/degreeMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 
-#### [1.3.3拉普拉斯矩阵](#content)
+#### [拉普拉斯矩阵](#content)
 
 给定一个有$n$个顶点的图$G=(V,E)$，其拉普拉斯矩阵被定义为$L=D-A$，$D$其中为图的度矩阵，$A$为图的邻接矩阵，拉普拉斯矩阵$L$:
 
