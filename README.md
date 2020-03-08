@@ -19,6 +19,7 @@
 - <a href = "#循环图神经网络RecGNNs">循环图神经网络RecGNNs</a>
 - <a href = "#卷积图神经网络ConvGNNs">卷积图神经网络ConvGNNs</a>
   - <a href = "#基于频谱的卷积">基于频谱的卷积</a>
+    - <a href = "#切比雪夫多项式近似">切比雪夫多项式近似</a>
   - <a href = "#基于空间的卷积">基于空间的卷积</a>
 - <a href = "#图自编码器GAEs">图自编码器GAEs</a>
 - <a href = "#时空图神经网络STGNNs">时空图神经网络STGNNs</a>
@@ -80,7 +81,7 @@
 
 ### [基于频谱的卷积](#content)
 
-基于谱的方法通过从图信号处理的角度引入filter来定义图卷积，其中图卷积运算被解释为从图信号中去除噪声。基于频谱的图卷积认为**图是无向的**，这样可以将无向图表示为**归一化的图拉普拉斯矩阵**，定义为$\mathbf{L}=\mathbf{I}_{\mathbf{n}}-\mathbf{D}^{-\frac{1}{2}} \mathbf{A} \mathbf{D}^{-\frac{1}{2}}$，其中$\mathbf{D}$代表无向图的<a href = "#度矩阵">度矩阵</a>，因为归一化的图拉普拉斯矩阵是实对称半正定矩阵，所以可以将其分解为$\mathbf{L}=\mathbf{U} \mathbf{\Lambda} \mathbf{U}^{T}$，其中$\mathbf{U}=\left[\mathbf{u}_{\mathbf{0}}, \mathbf{u}_{\mathbf{1}}, \cdots, \mathbf{u}_{\mathbf{n}-\mathbf{1}}\right] \in \mathbf{R}^{n \times n}$是按照特征值排序的特征向量矩阵，$\mathbf{\Lambda}$是特征值的对角矩阵$\boldsymbol{\Lambda}_{i i}=\lambda_{i}$，归一化的拉普拉斯矩阵的特征向量就形成了一个正交空间，数学表示为：$\mathbf{U}^{T} \mathbf{U}=\mathbf{I}$。接下来是<a href = "https://zh.wikipedia.org/wiki/圖論傅立葉轉換">图的傅立叶变换</a>，其实我们刚才得到的$\mathbf{U}^{T}$就是图的**傅立叶转换矩阵**，我们先将图节点的所有特征向量表示为$\mathbf{X}$，其中$\mathbf{X} \in \mathbf{R}^{n}$，$\boldsymbol{x}_{\boldsymbol{i}}$代表第$i^{t h}$个节点，那么我们就可以将图的傅立叶变化定义为：$\mathscr{F}(\mathbf{x})=\mathbf{U}^{T} \mathbf{x}$，得到的输出值为$\hat{\mathbf{X}}$，则逆傅立叶变换为：$\mathscr{F}^{-1}(\hat{\mathbf{x}})=\mathbf{U} \hat{\mathbf{x}}$。那么现在我们就可以把输入信号表示为：$\mathbf{x}=\sum_{i} \hat{x}_{i} \mathbf{u}_{i}$。现在一个输入信号为$\mathbf{X}$，filter为$\mathbf{g} \in \mathbf{R}^{N}$的图卷积操作我们就可以定义为：
+基于谱的方法通过从图信号处理的角度引入filter来定义图卷积，其中图卷积运算被解释为从图信号中去除噪声。基于频谱的图卷积认为**图是无向的**，这样可以将无向图表示为**归一化的图拉普拉斯矩阵**，定义为$\mathbf{L}=\mathbf{I}_{\mathbf{n}}-\mathbf{D}^{-\frac{1}{2}} \mathbf{A} \mathbf{D}^{-\frac{1}{2}}$，其中$\mathbf{D}$代表无向图的<a href = "#度矩阵">度矩阵</a>，因为归一化的图拉普拉斯矩阵是实对称半正定矩阵，所以可以将其分解为$\mathbf{L}=\mathbf{U} \mathbf{\Lambda} \mathbf{U}^{T}$，其中$\mathbf{U}=\left[\mathbf{u}_{\mathbf{0}}, \mathbf{u}_{\mathbf{1}}, \cdots, \mathbf{u}_{\mathbf{n}-\mathbf{1}}\right] \in \mathbf{R}^{n \times n}$是按照特征值排序的特征向量矩阵，$\mathbf{\Lambda}$是特征值的对角矩阵$\boldsymbol{\Lambda}_{i i}=\lambda_{i}$，归一化的拉普拉斯矩阵的特征向量就形成了一个正交空间，数学表示为：$\mathbf{U}^{T} \mathbf{U}=\mathbf{I}$。接下来是<a href = "https://zh.wikipedia.org/wiki/圖論傅立葉轉換">图的傅立叶变换</a>，其实我们刚才得到的$\mathbf{U}^{T}$就是图的**傅立叶转换矩阵**。我们先将图节点的所有特征用向量表示为$\mathbf{X}$，其中$\mathbf{X} \in \mathbf{R}^{n}$，$\boldsymbol{x}_{\boldsymbol{i}}$代表第$i^{t h}$个节点，假如每个节点有5个特征，10个节点的话$\mathbf{X}$就是一个10*5的矩阵。接下来我们就可以将图的傅立叶变化定义为：$\mathscr{F}(\mathbf{x})=\mathbf{U}^{T} \mathbf{x}$，得到的输出值为$\hat{\mathbf{X}}$，则逆傅立叶变换为：$\mathscr{F}^{-1}(\hat{\mathbf{x}})=\mathbf{U} \hat{\mathbf{x}}$。那么现在我们就可以把输入信号表示为：$\mathbf{x}=\sum_{i} \hat{x}_{i} \mathbf{u}_{i}$。现在一个输入信号为$\mathbf{X}$，filter为$\mathbf{g} \in \mathbf{R}^{N}$的图卷积操作我们就可以定义为：
 $$
 \begin{aligned}
 \mathbf{x} *_{G} \mathbf{g} &=\mathscr{F}^{-1}(\mathscr{F}(\mathbf{x}) \odot \mathscr{F}(\mathbf{g})) \\
@@ -92,6 +93,26 @@ $$
 \mathbf{x} *_{G} \mathbf{g}_{\theta}=\mathbf{U g}_{\theta} \mathbf{U}^{T} \mathbf{x}
 $$
 这个就是基于频谱的图卷积的基本定义，关键的不同就在于filter：$\mathbf{g} \theta$的选择。
+
+基于频谱的卷积神经网络假设filter：$\mathbf{g}_{\theta}=\mathbf{\Theta}_{i, j}^{(k)}$是一个可学习的参数集合并考虑了具有多个通道的图形信号。那么基于频谱的图卷积我们就可以定义为：
+$$
+\mathbf{H}_{i, j}^{(k)}=\sigma\left(\sum_{i=1}^{f_{k-1}} \mathbf{U} \Theta_{i, j}^{(k-1)} \mathbf{U}^{T} \mathbf{H}_{i, i}^{(k-1)}\right) \quad\left(j=1,2, \cdots, f_{k}\right)
+$$
+其中$k$代表层的索引，$\mathbf{H}^{(k-1)} \in \mathbf{R}^{n \times f_{k-1}}$是输入的图信号，$\mathbf{H}^{(0)}=\mathbf{X}$，$f_{k-1}$是输入的通道数，$f_{k}$是输出的通道数，是$\Theta_{i, j}^{(k-1)}$一个带有可学习参数的对角矩阵，由于拉普拉斯矩阵的特征分解，频谱卷积面临三个限制：
+
+- 对图的任何扰动都会导致正交空间的变化
+- 学习的filter是取决于域的，这意味着它们不能应用于具有不同结构的图
+- 特征分解需要$ O\left(n^{3}\right) $的激计算复杂度
+
+接下来我们就使用一些方法使得计算复杂度降到 $O\left(m\right) $.
+
+#### [切比雪夫多项式近似](#content)
+
+通过一个GCN层就可以获得2个深度的邻居信息
+
+#### 一阶近似
+
+通过3个GCN层也可以得到2个深度的邻居信息
 
 ### [基于空间的卷积](#content)
 
@@ -140,4 +161,8 @@ GNN是一组为解决各种任务而设计的神经网络模型，GNN是一组�
 [1] THUNLP: [GNNpapers](https://github.com/thunlp/GNNPapers)
 
 [2] [A Comprehensive Survey on Graph Neural Networks](https://arxiv.org/pdf/1901.00596.pdf)
+
+[3] [傅里叶分析之掐死教程](https://zhuanlan.zhihu.com/p/19763358)
+
+[4] [浅析图卷积神经网络](https://zhuanlan.zhihu.com/p/37091549)
 
