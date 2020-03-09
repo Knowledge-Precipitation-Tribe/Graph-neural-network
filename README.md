@@ -34,7 +34,6 @@
 ### [图](#content)
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/graph.png" width = "300" height = "160" alt="axis" align=center /></div>
-
 图是一种数据结构，由顶点集$V$和边集$E$组成,表示为$G=(V,E)$，其中$v_{i} \in V$代表每个顶点，$e_{i j}=\left(v_{i}, v_{j}\right) \in E$代表表每条边，图分为两种：
 
 - 有向图：每条边都带有方向
@@ -54,19 +53,16 @@
 - $A[i][j]=0$表示顶点$i$与顶点$j$不邻接，即$i$与$j$之间没有边
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/adjMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
-
 #### [度矩阵](#content)
 
 度矩阵其中包含的信息为的每一个顶点的度数，度矩阵$D$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/degreeMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
-
 #### [拉普拉斯矩阵](#content)
 
 给定一个有$n$个顶点的图$G=(V,E)$，其拉普拉斯矩阵被定义为$L=D-A$，$D$其中为图的度矩阵，$A$为图的邻接矩阵，拉普拉斯矩阵$L$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/laplaMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
-
 ### [其他相关概念](#content)
 
 <img><img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
@@ -165,4 +161,8 @@ GNN是一组为解决各种任务而设计的神经网络模型，GNN是一组�
 [3] [傅里叶分析之掐死教程](https://zhuanlan.zhihu.com/p/19763358)
 
 [4] [浅析图卷积神经网络](https://zhuanlan.zhihu.com/p/37091549)
+
+[5] https://towardsdatascience.com/how-to-do-deep-learning-on-graphs-with-graph-convolutional-networks-7d2250723780
+
+[6] https://developer.huawei.com/consumer/cn/forum/topicview?mod=viewthread&tid=41598012
 
