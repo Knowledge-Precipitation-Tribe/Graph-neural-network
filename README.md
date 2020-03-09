@@ -49,6 +49,8 @@
 
 #### [邻接矩阵](#content)
 
+
+
 邻接矩阵是表示顶点之间相邻关系的矩阵。设$G=(V,E)$是具有$n$个顶点的图，顶点序号依次为$0,1,...,n-1$,则$G$的邻接矩阵是具有如下定义的$n$阶方阵$A$：
 
 - $A[i][j]=1$表示顶点$i$与顶点$j$邻接，即$i$与$j$之间存在边
@@ -57,15 +59,21 @@
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/adjMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 #### [度矩阵](#content)
 
+
+
 度矩阵其中包含的信息为的每一个顶点的度数，度矩阵$D$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/degreeMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 #### [拉普拉斯矩阵](#content)
 
+
+
 给定一个有$n$个顶点的图$G=(V,E)$，其拉普拉斯矩阵被定义为$L=D-A$，$D$其中为图的度矩阵，$A$为图的邻接矩阵，拉普拉斯矩阵$L$:
 
 <div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/laplaMatrix.png" width = "300" height = "200" alt="axis" align=center /></div>
 ### [其他相关概念](#content)
+
+
 
 <img><img src="https://cdn.mathpix.com/snip/images/7GxH8KCmCtUy_O3IUoVb65iuSZmRCF3LDnDKQDrNV7E.original.fullsize.png" />
 
@@ -77,7 +85,11 @@
 
 卷积图神经网络（ConvGNNs）概括了从网格数据到图数据的卷积操作。主要思想是通过汇总节点自身的特征 $ \mathbf{X}_{v} $ 和邻居的特征 $ \mathbf{X}_{u} $ 来生成节点$v$的表示形式，其中$ u \in N(v) $。与RecGNN不同，ConvGNN堆叠多个图卷积层以提取高级节点表示。ConvGNN在建立许多其他复杂的GNN模型中起着核心作用。
 
+
+
 ### [动态理解图卷积](#content)
+
+
 
 本小节参考[链接](https://zhuanlan.zhihu.com/p/37091549)
 
