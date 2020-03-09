@@ -83,19 +83,19 @@
 
 第一步：每一个节点将自身的特征信息经过变换后发送给邻居节点。这一步是在对节点的特征信息进行抽取变换。
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN1.gif" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN1.gif" width = "300" height = "240" alt="axis" align=center /></div>
 
 第二步：每个节点将邻居节点的特征信息聚集起来。这一步是在对节点的局部结构信息进行融合。
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN2.gif" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN2.gif" width = "300" height = "240" alt="axis" align=center /></div>
 
 第三步：把前面的信息聚集之后做非线性变换，增加模型的表达能力。
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN3.gif" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN3.gif" width = "300" height = "240" alt="axis" align=center /></div>
 
 通过图卷积操作就类似于正常的网格卷积，随着层数的增加会逐渐增加感受野的大小
 
-<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN4.gif" width = "300" height = "200" alt="axis" align=center /></div>
+<div align = "center"><image src="https://github.com/Knowledge-Precipitation-Tribe/Graph-neural-network/blob/master/images/GCN4.gif" width = "300" height = "240" alt="axis" align=center /></div>
 
 ### [基于频谱的卷积](#content)
 
