@@ -14,3 +14,5 @@
 
 \[7\] [https://tkipf.github.io/graph-convolutional-networks/](https://tkipf.github.io/graph-convolutional-networks/)
 
+\[8\] [https://github.com/zhouchunpong/GCN\_Keras](https://github.com/zhouchunpong/GCN_Keras)
+
