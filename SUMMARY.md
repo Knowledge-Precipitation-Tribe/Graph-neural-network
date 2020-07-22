@@ -2,6 +2,7 @@
 
 * [Graph-neural-network](README.md)
 * [基本概念与常用符号](ji-ben-gai-nian-yu-chang-yong-fu-hao.md)
+* [数据](shu-ju.md)
 * [循环图神经网络RecGNNs](xun-huan-tu-shen-jing-wang-luo-recgnns.md)
 * [卷积图神经网络ConvGNNs](juan-ji-tu-shen-jing-wang-luo-convgnns/README.md)
   * [图信号](juan-ji-tu-shen-jing-wang-luo-convgnns/tu-xin-hao.md)
